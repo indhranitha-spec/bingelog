@@ -41,3 +41,6 @@ The first version of BingeLog will include:
 
 ## Development Process
 BingeLog will be developed in smaller stages. Each feature will be implemented and tested incrementally, with GitHub commits documenting the project's progress.
+
+## System Diagram
+![BingeLog System Diagram](docs/system-diagram.png)
