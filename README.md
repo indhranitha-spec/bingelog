@@ -3,6 +3,9 @@
 ## Project Overview
 BingeLog is a TV show tracking and review platform inspired by Letterboxd. Users can log shows they've watched, rate and review their favorites, and create personalized watchlists.
 
+## The Problem
+You have GoodReads for books Letterboxd for movies but where can you log the Shows you've watched? BingeLog. A web-based app that allows users to track what shows they're watching
+
 ## Project Goals
 - Create an easy-to-use TV show tracking platform.
 - Allow users to rate and review television shows.
