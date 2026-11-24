@@ -1,49 +1,32 @@
-# bingelog
+# React + TypeScript + Vite
 
-## Project Overview
-BingeLog is a TV show tracking and review platform inspired by Letterboxd. Users can log shows they've watched, rate and review their favorites, and create personalized watchlists.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## The Problem
-You have GoodReads for books Letterboxd for movies but where can you log the Shows you've watched? BingeLog. A web-based app that allows users to track what shows they're watching
+Currently, two official plugins are available:
 
-## Project Goals
-- Create an easy-to-use TV show tracking platform.
-- Allow users to rate and review television shows.
-- Help users organize shows they want to watch.
-- Track viewing progress across seasons and episodes.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## MVP (Minimum Viable Product)
-The first version of BingeLog will include:
-- Searching for TV shows.
-- Marking shows as currently watching or completed.
-- Rating and reviewing TV shows.
-- Creating and managing a personal watchlist.
-- Viewing basic information about each show.
+## React Compiler
 
-## Technology Stack
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-**Languages:**
-- Python
-- HTML
-- CSS
+## Expanding the Oxlint configuration
 
-**Libraries and Frameworks:**
-- SQLite
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
-**External Tools:**
-- Visual Studio Code
-- Git and GitHub
-
-## Project Structure
-- `app/` – Main application files.
-- `static/` – CSS and images.
-- `templates/` – HTML templates.
-- `tests/` – Testing files.
-- `docs/` – Project documentation.
-
-## Development Process
-BingeLog will be developed in smaller stages. Each feature will be implemented and tested incrementally, with GitHub commits documenting the project's progress.
-
-## System Diagram
-![BingeLog System Diagram](docs/system-diagram.png)
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
