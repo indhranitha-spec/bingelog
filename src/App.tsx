@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import './App.css'
 //now instead of all the functions here i can better organize the code
 import ShowsLibrary from './pages/shows-library';
+import LogShow from './pages/log-show';
 
 //this is the main component of the app
 // React starts here and renders the content that gets returned because of app
@@ -21,9 +22,11 @@ function App() {
         {/*displays the home page when the url is "/"" */}
         <Route path="/" element={<Home onStart={() => navigate("/options")} />} />
         {/*displays the options page when the url is "/options" */}
-        <Route path="/options" element={<Options onBack={() => navigate("/")} onLog={() => navigate("/library")} />} />
+        <Route path="/options" element={<Options onBack={() => navigate("/")} onLog={() => navigate("/log-show")} onLibrary={() => navigate("/library")} />} />
         {/*displays the library page when the url is "/library" */}
         <Route path="/library" element={<ShowsLibrary onBack={() => navigate("/options")} />} />
+        {/*displays the log show page when the url is "/log-show" */}
+        <Route path="/log-show" element={<LogShow onBack={() => navigate("/options")} />} />
       </Routes>
     </div>
   );
@@ -62,10 +65,12 @@ function Home({ onStart }: { onStart: () => void }) {
 // onBack is a function passed down from the App component.
 function Options({
   onBack,
-  onLog
+  onLog,
+  onLibrary
 }: {
   onBack: () => void;
   onLog: () => void;
+  onLibrary: () => void;
 }) {
   return (
     <div className="options-page">
@@ -82,19 +87,19 @@ function Options({
         <section className="option">
           <h1>Log a new show</h1>
 
-          {/* Search area. At this point it is only a visual input. */}
-          <div className="search-placeholder">
-            <input type="text" placeholder="Search..." />
-          </div>
         </section>
+        {/* NEW BUTTON GOES HERE */}
+          <button className="btn" onClick={onLog}>
+            Log a Show
+          </button>  
 
         {/* Second section: option to view shows already watched. */}
         <section className="option">
           <h1>View watched shows</h1>
 
           {/* Clicking Log now takes the user to the Library page. */}
-          <button className="btn" onClick={onLog}>
-            Log
+          <button className="btn" onClick={onLibrary}>
+            View Library
           </button>
         </section>
 

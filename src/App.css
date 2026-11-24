@@ -182,3 +182,66 @@
     border-right-color: var(--border);
   }
 }
+
+/* Main container for the logging page. */
+.log-page {
+  padding: 40px;
+}
+
+/* Search bar styling. */
+.log-search {
+  margin-top: 30px;
+  max-width: 500px;
+}
+
+.log-search input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+}
+
+/* Grid for the placeholder show results. */
+.log-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Centers the text within each show card. */
+.log-card {
+  text-align: center;
+}
+
+/* Placeholder for show posters. */
+.log-image-placeholder {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #e7eaf0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 18px;
+}
+
+/* Show title styling. */
+.log-card h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+/* Responsive layout for smaller screens. */
+@media (max-width: 800px) {
+  .log-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .log-grid {
+    grid-template-columns: 1fr;
+  }
+}
