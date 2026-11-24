@@ -1,41 +1,30 @@
-import { useState } from 'react'
+//changing from useState to router to navigate without using conditionals
+// Imports the tools we need to navigate between pages.
+import { Routes, Route, useNavigate } from 'react-router-dom'
+
+// Imports the CSS styling for the app.
 import './App.css'
+//now instead of all the functions here i can better organize the code
 import ShowsLibrary from './pages/shows-library';
 
 //this is the main component of the app
 // React starts here and renders the content that gets returned because of app
 function App() {
 
-  // useState keeps track of which page the user is currently on.
-  //  now the user can switch between the home page and the options page and library
-  // "page" stores the current value, and "setPage" changes that value.  
-  const [page, setPage] = useState<"home" | "options" | "library">("home");
+  // useNavigate allows us to move to different urls making the code more efficient than useSate
+  const navigate = useNavigate(); 
 
   return (
     <div className="app">
-      
-      {/* If the page state is "home", display the Home component. */}
-      {page === "home" ? (
-
-        // Home receives a function called onStart.
-        // Clicking the Go button will change the page state to "options".
-        <Home onStart={() => setPage("options")} />
-
-      ) : page === "options" ? (
-        // If the current page is "options", display the Options component.
-        // onBack takes the user back home.
-        // onLog takes the user to the Library page.
-        <Options
-          onBack={() => setPage("home")}
-          onLog={() => setPage("library")}
-        />
-      ) : (
-
-        // If the page is not home or Options component display library.
-        // the back button now takes the user back to the Options page
-        <ShowsLibrary onBack={() => setPage("options")} />
-
-      )}
+     {/* routes chooses which page to render based on the url */}
+      <Routes> 
+        {/*displays the home page when the url is "/"" */}
+        <Route path="/" element={<Home onStart={() => navigate("/options")} />} />
+        {/*displays the options page when the url is "/options" */}
+        <Route path="/options" element={<Options onBack={() => navigate("/")} onLog={() => navigate("/library")} />} />
+        {/*displays the library page when the url is "/library" */}
+        <Route path="/library" element={<ShowsLibrary onBack={() => navigate("/options")} />} />
+      </Routes>
     </div>
   );
 }
