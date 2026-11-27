@@ -245,3 +245,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+.log-card img {
+  width: 50%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
