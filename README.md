@@ -114,6 +114,7 @@ Open this link in your browser to use BingeLog.
 
 ### Future Plans
 
+- [x] remove shows from library
 - [ ] Add watch statuses (Watching, Completed, Want to Watch).
 - [ ] Add episode and season tracking.
 - [ ] Add show ratings and reviews.
