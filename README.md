@@ -1,4 +1,4 @@
-# BingeLog 📺
+# BingeLog 
 **A TV show tracker inspired by Letterboxd that lets users search, save, and manage their own TV show library.**
 
 ## The Problem
