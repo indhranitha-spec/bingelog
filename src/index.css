@@ -126,7 +126,11 @@ code {
   cursor: pointer;
 }
 
+<<<<<<< Updated upstream
 ..show-card img {
+=======
+.show-card img {
+>>>>>>> Stashed changes
   width: 50%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
