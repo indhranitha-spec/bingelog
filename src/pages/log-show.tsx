@@ -3,7 +3,18 @@
  import { useState, useEffect } from 'react';
  
  // Creates the page where users can search for and log new shows.
-function LogShow({ onBack }: { onBack: () => void }) {
+function LogShow({
+  onBack,
+  onAddShow
+}: {
+  onBack: () => void;
+  onAddShow: (show: {
+    id: number;
+    name: string;
+    genres: string[];
+    image: string | null;
+  }) => void;
+}) {
   //stores what the user types in the search bar
     const [search, setSearch] = useState('');
   // stores the shpws returned by API
@@ -71,8 +82,20 @@ useEffect(() => {
     {/* Displays the show's genres. */}
     <p>{result.show.genres.join(", ")}</p>
 
-    {/* Button to add the show later. */}
-    <button className="btn">Add Show</button>
+    {/* Adds the selected show to the user's library. */}
+<button
+  className="btn"
+  onClick={() =>
+    onAddShow({
+      id: result.show.id,
+      name: result.show.name,
+      genres: result.show.genres,
+      image: result.show.image?.medium || null
+    })
+  }
+>
+  Add Show
+</button>
   </div>
 ))}
 
