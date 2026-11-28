@@ -125,3 +125,9 @@ code {
   border: none;
   cursor: pointer;
 }
+
+..show-card img {
+  width: 50%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}

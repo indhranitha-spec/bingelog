@@ -253,3 +253,10 @@
   object-fit: cover;
 }
 
+/* Displays actual show posters in the library. */
+.show-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
